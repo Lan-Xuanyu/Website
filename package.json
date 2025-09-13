@@ -12,6 +12,10 @@
   "dependencies": {
     "@fluentui/react-components": "^9.68.0",
     "@fluentui/react-icons": "^2.0.307",
+    "@types/marked": "^5.0.2",
+    "buffer": "^6.0.3",
+    "gray-matter": "^4.0.3",
+    "marked": "^16.1.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

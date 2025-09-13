@@ -1,41 +1,48 @@
+import React from 'react';
 import {
   FluentProvider,
   webLightTheme,
-  Title1,
   makeStyles,
-  tokens
-} from '@fluentui/react-components'
-import './App.css'
+  tokens,
+  Title1,
+  Body1
+} from '@fluentui/react-components';
+import { ArticleList } from './components/ArticleList';
+import './App.css';
 
 const useStyles = makeStyles({
-  container: {
-    display: 'flex',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
+  app: {
     minHeight: '100vh',
-    paddingTop: '80px',
-    paddingLeft: '80px',
     backgroundColor: tokens.colorNeutralBackground1
   },
-  title: {
-    textAlign: 'left',
-    fontSize: '4rem',
-    fontWeight: 'bold',
-    width: '100%',
-    margin: '0'
+  header: {
+    backgroundColor: tokens.colorBrandBackground,
+    color: tokens.colorNeutralForegroundOnBrand,
+    padding: tokens.spacingVerticalL,
+    textAlign: 'center',
+    boxShadow: tokens.shadow4
+  },
+  main: {
+    padding: tokens.spacingVerticalL
   }
-})
+});
 
 function App() {
-  const styles = useStyles()
+  const styles = useStyles();
 
   return (
     <FluentProvider theme={webLightTheme}>
-      <div className={styles.container}>
-        <Title1 className={styles.title}>Lan-Website</Title1>
+      <div className={styles.app}>
+        <header className={styles.header}>
+          <Title1>技术博客</Title1>
+          <Body1>分享前端开发经验与技术洞察</Body1>
+        </header>
+        <main className={styles.main}>
+          <ArticleList />
+        </main>
       </div>
     </FluentProvider>
-  )
+  );
 }
 
-export default App
+export default App;
